@@ -8,6 +8,7 @@ import android.os.Parcelable;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -24,8 +25,12 @@ public class Main2Activity extends AppCompatActivity {
 //        String[] arrayName = intent.getStringArrayExtra("arrayname");
 //        Log.d("BBB",arrayName.length + "");
         //3 : Nhan dang object
+//        Intent intent = getIntent();
+//        Sinhvien sinhvien = (Sinhvien) intent.getSerializableExtra("object");
+//        Log.d("BBB",sinhvien.getTen());
+        //4 : Nhan dang arraylistobject
         Intent intent = getIntent();
-        Sinhvien sinhvien = (Sinhvien) intent.getSerializableExtra("object");
-        Log.d("BBB",sinhvien.getTen());
+        ArrayList<Sinhvien> sinhvienArrayList = intent.getParcelableArrayListExtra("arraylistobject");
+        Log.d("BBB",sinhvienArrayList.size() + "");
     }
 }
